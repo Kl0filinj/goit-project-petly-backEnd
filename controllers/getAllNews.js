@@ -1,4 +1,4 @@
-const News = require("../models/newsModel");
+const { News } = require("../models/newsModel");
 
 
 const getAllNews = async (req, res, next) => {
@@ -8,7 +8,7 @@ const getAllNews = async (req, res, next) => {
     throw RequestError(404, "Not found");
   }
 
-    res.json(result)
+    return res.json(result)
 }
 
 module.exports = getAllNews;

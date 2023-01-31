@@ -5,6 +5,6 @@ const { asyncWrapper } = require("../helpers/apiHelpers");
 
 const router = express.Router();
 
-router.get("/news", asyncWrapper(getAllNews));
+router.get("/", asyncWrapper(getAllNews));
 
 module.exports = router;

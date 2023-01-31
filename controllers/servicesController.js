@@ -1,4 +1,4 @@
-const Service = require("../models/serviceModel");
+const { Service } = require("../models/serviceModel");
 
 
 const servicesController = async (req, res, next) => {
@@ -8,7 +8,7 @@ const servicesController = async (req, res, next) => {
     throw RequestError(404, "Not found");
   }
 
-    res.json(result)
+    return res.json(result)
 }
 
 module.exports = {
