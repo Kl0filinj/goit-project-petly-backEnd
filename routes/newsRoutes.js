@@ -1,10 +1,12 @@
 const express = require("express");
 
-const { getAllNews } = require("../controllers/getAllNews");
+const { newsController } = require("../controllers/newsController");
 const { asyncWrapper } = require("../helpers/apiHelpers");
 
 const router = express.Router();
 
-router.get("/", asyncWrapper(getAllNews));
+router.get("/", asyncWrapper(newsController));
 
 module.exports = router;
+
+

@@ -1,9 +1,9 @@
-const { Service } = require("../models/serviceModel");
+const { News } = require("../models/newsModel");
 const RequestError = require('../helpers/RequestError');
 
 
-const servicesController = async (req, res, next) => {
-    const result = await Service.find()
+const newsController = async (req, res, next) => {
+    const result = await News.find({})
 
   if (!result) {
     throw RequestError(404, "Not found");
@@ -13,5 +13,5 @@ const servicesController = async (req, res, next) => {
 }
 
 module.exports = {
-    servicesController,
+    newsController,
 };
