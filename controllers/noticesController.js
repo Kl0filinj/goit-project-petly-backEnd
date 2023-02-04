@@ -34,8 +34,14 @@ const getMyNotice = async (req, res) => {
 };
 
 const getFavoriteNotices = async (req, res) => {
-  const favNotices = User.find({ userId: req.params._id })
+ // const favNotices = User.find({ userId: req.params._id })
+//  const { _id: userId } = req.user
+  const favNotices = User.find({ favorites: req.params })
+//  const { favNoticesId: favorites } = req.params
 
+// const favNotices = await User.find({_id: favNoticesId, owner: userId});
+
+console.log('favNotices: ', favNotices)
     if (!favNotices) {
     throw RequestError(404, "Not found");
   }
