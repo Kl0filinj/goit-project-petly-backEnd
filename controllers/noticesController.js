@@ -64,10 +64,14 @@ const deleteMyNotice = async (req, res) => {
 const getNoticesByCategory = async (req, res) => {
   const { categoryName } = req.params;
   const { query } = req.query;
+
+  const regExFromQuery = new RegExp(query);
+  
   const options =
     query === undefined
       ? { categoryName }
-      : { categoryName, $text: { $search: query } };
+      : { categoryName, title: regExFromQuery };
+      // { categoryName, $text: { $search: query } };
   const result = await Notices.find(options);
 
   if (!result) {
