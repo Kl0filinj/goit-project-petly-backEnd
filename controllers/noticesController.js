@@ -19,12 +19,12 @@ const addNotice = async (req, res) => {
     noticeImgURL = secure_url;
   }
     
+  // await Notices.createIndex({ title: "text" });
+
   const notice = new Notices({... req.body, photo: noticeImgURL, owner: userID});
   await notice.save();
 
-  // const database = client.db("db-testDB");
-  // console.log(database);
-  // await Notices.createIndex({ title: "text" });
+
   return res.status(201).json(notice);
 };
 
