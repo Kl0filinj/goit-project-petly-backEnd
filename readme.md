@@ -1,12 +1,10 @@
+# PETLY SERVER
+
 ## SWAGGER
 
   https://editor-next.swagger.io/
-
-### LIVE URL
-
-  https://goit-project-petly-backend.onrender.com
   
-### HOW TO START
+## HOW TO START
 
 - `npm start` &mdash; старт сервера в режимі production
 - `npm run start:dev` &mdash; старт сервера в режимі розробки (development)
